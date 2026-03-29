@@ -42,7 +42,7 @@
         /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(rgba(26, 74, 115, 0.4), rgba(26, 74, 115, 0.4)), 
-                        url('bateau et avi 1.png') center/cover;
+                        url('bateauetavi1.png') center/cover;
             height: 450px;
             display: flex;
             flex-direction: column;
