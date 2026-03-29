@@ -155,45 +155,33 @@
         /* --- ADAPTATION MOBILE (Écrans inférieurs à 768px) --- */
 @media (max-width: 768px) {
     
-    /* 1. La barre de recherche prend toute la largeur sous le logo */
-    header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+    /* 1. Réduire le logo pour qu'il ne sature pas le haut */
+    header .logo {
+        height: 35px; /* On réduit un peu la taille */
+        margin-bottom: 15px;
     }
 
-    .search-bar {
-        width: 100%;
-        order: 3; /* Place la recherche en dernier dans le header */
-    }
-
-    /* 2. Le texte du Hero s'adapte */
-    .hero h1 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-    
-    .hero {
-        align-items: center;
-        padding-left: 0;
-        height: 350px;
-    }
-
-    /* 3. LES GRILLES PASSENT SUR UNE SEULE COLONNE */
-    .grid-categories, .logistics-section, .featured-grid {
-        grid-template-columns: 1fr; /* Une seule carte par ligne */
-        padding: 15px;
-    }
-
-    .category-card {
-        height: 180px; /* Moins haut sur mobile pour ne pas trop scroller */
-    }
-
-    /* 4. Menu d'icônes plus accessible */
-    .nav-icons {
-        width: 100%;
+    /* 2. Aligner les icônes proprement sur une seule ligne */
+    .icons-container { /* Remplace par le nom de ta classe si différent */
         display: flex;
         justify-content: space-around;
-        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    .icons-container i {
+        font-size: 20px; /* On réduit la taille des icônes */
+    }
+
+    /* 3. Ajuster le texte de l'image de fond (Hero) */
+    .hero h1 {
+        font-size: 22px; /* Plus petit pour que ça tienne bien */
+        padding: 0 10px; /* Pour éviter que le texte touche les bords */
+        line-height: 1.4;
+    }
+
+    /* 4. Le bouton IMPORTER */
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }
