@@ -153,35 +153,86 @@
        
        /* --- ADAPTATION MOBILE (Écrans inférieurs à 768px) --- */
         /* --- ADAPTATION MOBILE (Écrans inférieurs à 768px) --- */
+/* ========================================================
+   ADAPTATION POUR MOBILE (max 768px de large)
+   ======================================================== */
 @media (max-width: 768px) {
     
-    /* 1. Réduire le logo pour qu'il ne sature pas le haut */
-    header .logo {
-        height: 35px; /* On réduit un peu la taille */
-        margin-bottom: 15px;
-    }
-
-    /* 2. Aligner les icônes proprement sur une seule ligne */
-    .icons-container { /* Remplace par le nom de ta classe si différent */
+    /* 1. Header et fond bleu pour mobile */
+    header {
+        background-color: #1a4a73; /* Remplace par ta couleur de header exacte */
+        padding: 10px 5%; /* Un peu d'air autour */
         display: flex;
-        justify-content: space-around;
-        padding: 10px 0;
+        flex-direction: column; /* Empile logo et icônes */
+        align-items: center; /* Centre tout horizontalement */
     }
 
-    .icons-container i {
-        font-size: 20px; /* On réduit la taille des icônes */
+    /* 2. Réduire le logo (encore plus petit pour le mobile) */
+    header .logo {
+        height: 30px; /* J'ai mis 30px pour qu'il soit discret */
+        width: auto;
+        margin-bottom: 15px; /* Espace avant les icônes */
+        display: block; /* S'assure qu'il prend toute sa ligne */
     }
 
-    /* 3. Ajuster le texte de l'image de fond (Hero) */
+    /* 3. Les icônes de navigation (Profil, Tel, Panier) */
+    .icons-container { /* Remplace par la classe exacte de tes icônes */
+        display: flex;
+        justify-content: space-around; /* Aligne proprement */
+        width: 100%; /* Prend toute la largeur */
+        margin-bottom: 0; /* Pas d'espace après les icônes */
+    }
+
+    .icons-container i { /* Réduit la taille des icônes */
+        font-size: 20px; 
+        color: white; /* Assure-toi qu'elles sont blanches */
+    }
+
+    /* 4. Enlever la barre de recherche du Header */
+    header .search-container { /* Remplace par la classe exacte de ta barre de recherche */
+        display: none; /* Cache la barre de recherche du header en mobile */
+    }
+
+    /* ========================================================
+       SECTION HERO (Le fond avec le texte)
+       ======================================================== */
+
+    /* 5. Ajuster le Hero pour accueillir la recherche */
+    .hero {
+        display: flex;
+        flex-direction: column; /* Empile texte, recherche, bouton */
+        justify-content: center; /* Centre verticalement */
+        align-items: center; /* Centre horizontalement */
+        padding: 40px 10px; /* Plus d'espace pour tout caser */
+    }
+
+    /* 6. Le texte principal (ajusté pour mobile) */
     .hero h1 {
-        font-size: 22px; /* Plus petit pour que ça tienne bien */
-        padding: 0 10px; /* Pour éviter que le texte touche les bords */
+        font-size: 20px; /* Plus petit pour ne pas dépasser */
+        margin-bottom: 20px; /* Espace avant la barre de recherche */
+        padding: 0 10px; /* Évite les bords */
         line-height: 1.4;
     }
 
-    /* 4. Le bouton IMPORTER */
-    .hero .btn {
-        padding: 10px 20px;
-        font-size: 16px;
+    /* 7. Positionner la barre de recherche DANS le Hero */
+    .hero .search-container { /* Remplace par la classe exacte de ta barre de recherche */
+        display: flex; /* La rend visible ici */
+        width: 80%; /* Prend 80% de la largeur du hero */
+        margin-bottom: 20px; /* Espace avant le bouton */
+    }
+
+    /* Style pour la barre de recherche dans le Hero */
+    .hero .search-container input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.2); /* Blanc un peu transparent */
+        color: white;
+    }
+
+    /* Style pour le placeholder dans le Hero (discret) */
+    .hero .search-container input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
     }
 }
